@@ -1,6 +1,6 @@
 package com.jiangfengliu;
 
-import com.google.gson.Gson;
+//import com.google.gson.Gson;
 import com.jiangfengliu.dao.ChannelDao;
 import com.jiangfengliu.model.Channel;
 import org.json.JSONObject;
@@ -49,7 +49,7 @@ public class SpringBootApplicationDemo extends SpringBootServletInitializer impl
   @ResponseBody
   public String getInfo(@RequestParam String name) {
     List<Channel> channels = channelDao.selectByChannelIds(Arrays.asList(8L));
-    return new Gson().toJson(channels);
+    return Arrays.toString(channels.toArray());
   }
 
   @Override
